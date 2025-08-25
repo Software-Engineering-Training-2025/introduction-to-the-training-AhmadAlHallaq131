@@ -13,9 +13,12 @@ public class Calculator {
             return a - b;
         } else if (op == Operator.MULTIPLY) {
             return a * b;
-        } else if (op == Operator.DIVIDE) {
-            // throw an ArithmeticException when b == 0
+        } else if (op == Operator.DIVIDE)  {
+            if (b == 0){
+                throw new ArithmeticException("Divide by zero");
+            }
             return a / b;
+            // throw an ArithmeticException when b == 0
         } else {
             throw new IllegalArgumentException("Unknown operator");
         }
